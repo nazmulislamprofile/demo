@@ -61,4 +61,23 @@ function lowercaseFirstLetter(str){
 let str="Hello Word";
 console.log(lowercaseFirstLetter(str));
 
+ // Assignment NO: 07
+ function countVowels(str1) {
+    let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+    let count = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str1[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+let str1 = "hello world";
+let vowelCount = countVowels(str1);
+console.log(vowelCount);
+
+
 
