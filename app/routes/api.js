@@ -7,5 +7,6 @@ const router=express.Router();
 router.post("/registration",userController.registration)
 router.post("/login",userController.Login);
 router.get("/profile",userController.profile)
+router.get("/allProfile");
 
 export default router;
