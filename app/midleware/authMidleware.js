@@ -5,8 +5,6 @@ export default (req, res, next) => {
     let token=req.headers['token']
 
     let decoded=TokenDecode(token)
-  
-   
 
     if (decoded===null){
         res.status(401).send({status:"fail",message:"Unauthorized"})

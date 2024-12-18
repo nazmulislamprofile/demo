@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
     {
-        NIDNumber: {type: String, unique: true, required: true},
+        NIDNumber: {type: String,unique:true, required: true},
         firstName: {type: String, required: true},
         lastName: {type: String, required: true},
         phoneNumber: {type: String, required: true},
