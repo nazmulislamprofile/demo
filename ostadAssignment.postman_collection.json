@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "8f5a4a0a-7d0d-48b5-b876-fe997c87e29e",
+		"name": "ostadAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38194572"
+	},
+	"item": [
+		{
+			"name": "registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NIDNumber\":\"003\",\r\n        \"firstName\":\"rakib\",\r\n        \"lastName\": \"hasan\",\r\n        \"phoneNumber\":\"0178244252\",\r\n        \"password\":\"12345\",\r\n        \"bloodGroup\":\"A+\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/registration",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NIDNumber\":\"003\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readProfile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NIDNumber\":\"12345678\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/readProfile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"readProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readAllProfiles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NIDNumber\":\"122345678\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/readAllProfiles",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"readAllProfiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"NIDNumber\":\"003\",\r\n        \"firstName\":\"Mr.Baizid\",\r\n        \"lastName\": \"hasan\",\r\n        \"phoneNumber\":\"123456789\",\r\n        \"password\":\"12345\",\r\n        \"bloodGroup\":\"A+\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/updateProfile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"updateProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProfile",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NIDNumber\":\"122345678\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/deleteProfile/12345678",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"deleteProfile",
+						"12345678"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://crispy-capybara-7x9q54rq9v6fxvxj-5050.app.github.dev/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOSUROdW1iZXIiOiIwMDMiLCJwYXNzd29yZCI6IjEyMzQ1IiwiaWF0IjoxNzM0NDk1NTE1LCJleHAiOjE3MzcwODc1MTV9.HzMKcNBfXdIR3Wf5Flz2AO1cPPZMuafahOE2M1swNYo",
+			"type": "string"
+		}
+	]
+}
